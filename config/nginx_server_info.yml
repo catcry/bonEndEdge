@@ -1,0 +1,5 @@
+server:
+  host: cryvm.bonyan.local
+  username: catcry
+  password: a321321a
+  remote_path: /home/catcry/

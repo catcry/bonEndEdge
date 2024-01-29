@@ -1,0 +1,6 @@
+database:
+    host: cryvm.bonyan.local
+    port: 3360
+    dbname: edgedb
+    username: edgeuser
+    password: 123123

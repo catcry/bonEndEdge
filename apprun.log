@@ -1,0 +1,34 @@
+[2024-01-28 22:31:26 +0000] [382] [INFO] Starting gunicorn 21.2.0
+[2024-01-28 22:31:26 +0000] [382] [INFO] Listening at: http://0.0.0.0:7443 (382)
+[2024-01-28 22:31:26 +0000] [382] [INFO] Using worker: sync
+[2024-01-28 22:31:26 +0000] [383] [INFO] Booting worker with pid: 383
+[2024-01-28 22:41:45,833] ERROR in app: Exception on /api/insert_record [POST]
+Traceback (most recent call last):
+  File "/app/cenv/lib/python3.10/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/app/cenv/lib/python3.10/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/app/cenv/lib/python3.10/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/app/cenv/lib/python3.10/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/app/endedge/app/api_routes.py", line 34, in insert_end
+    check_record_existence = get_record(req.end_name, req.end_url, req.port)
+  File "/app/endedge/app/sql.py", line 50, in get_record
+    cursor = conn.cursor()
+AttributeError: 'NoneType' object has no attribute 'cursor'
+[2024-01-28 22:43:58,721] ERROR in app: Exception on /api/insert_record [POST]
+Traceback (most recent call last):
+  File "/app/cenv/lib/python3.10/site-packages/flask/app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/app/cenv/lib/python3.10/site-packages/flask/app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/app/cenv/lib/python3.10/site-packages/flask/app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/app/cenv/lib/python3.10/site-packages/flask/app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/app/endedge/app/api_routes.py", line 34, in insert_end
+    check_record_existence = get_record(req.end_name, req.end_url, req.port)
+  File "/app/endedge/app/sql.py", line 50, in get_record
+    cursor = conn.cursor()
+AttributeError: 'NoneType' object has no attribute 'cursor'
